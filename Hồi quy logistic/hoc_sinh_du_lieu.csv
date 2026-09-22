@@ -1,0 +1,11 @@
+Student,HoursPerDay,ExamScore,PassStatus,PassNumeric
+A,1,45,Khong,0
+B,2,50,Khong,0
+C,2,55,Khong,0
+D,3,60,Co,1
+E,3,65,Co,1
+F,4,70,Co,1
+G,4,75,Co,1
+H,5,80,Co,1
+I,5,90,Co,1
+J,6,95,Co,1
