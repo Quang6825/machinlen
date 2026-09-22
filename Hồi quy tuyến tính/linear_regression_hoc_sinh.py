@@ -1,3 +1,5 @@
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 import pandas as pd
 from pathlib import Path
 from sklearn.linear_model import LinearRegression

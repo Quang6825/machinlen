@@ -1,3 +1,5 @@
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 from pathlib import Path
 
 import matplotlib
@@ -21,7 +23,7 @@ def load_data():
 
 
 df = load_data()
-print("Dữ liệu đã đọc:")
+print("\nDữ liệu đã đọc:")
 print(df)
 
 X = df[["HoursPerDay", "ExamScore"]].values

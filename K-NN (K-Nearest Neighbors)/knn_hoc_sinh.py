@@ -1,8 +1,10 @@
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 import csv
 import math
 from typing import List, Dict, Tuple
 
-DATA_FILE = "hoc_sinh_du_lieu.csv"
+DATA_FILE = r"D:\Quang code\AI\machinlen\machinlen\K-NN (K-Nearest Neighbors)\hoc_sinh_du_lieu.csv"
 
 
 def load_dataset(path: str) -> List[Dict[str, object]]:
@@ -68,7 +70,7 @@ def evaluate_knn(data: List[Dict[str, object]], k: int = 3) -> Tuple[float, List
 def main() -> None:
     data = load_dataset(DATA_FILE)
 
-    print("=== Dữ liệu học sinh ===")
+    print("\n=== Dữ liệu học sinh ===")
     for row in data:
         print(f"{row['Student']}: HoursPerDay={row['HoursPerDay']}, ExamScore={row['ExamScore']}, PassStatus={row['PassStatus']}")
 

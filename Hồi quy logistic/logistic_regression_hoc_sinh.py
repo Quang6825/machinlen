@@ -1,3 +1,5 @@
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
@@ -14,11 +16,11 @@ X = df[['gio_hoc', 'diem_kiem_tra']]
 y = df['dau']
 
 model = LogisticRegression(max_iter=10000)
-model.fit(X, y)
+model.fit(X.values, y)
 
 # Dự đoán trên tập dữ liệu
-pred = model.predict(X)
-print('Hệ số beta_0:', model.intercept_[0])
+pred = model.predict(X.values)
+print('\nHệ số beta_0:', model.intercept_[0])
 print('Hệ số beta_1 (gio_hoc):', model.coef_[0][0])
 print('Hệ số beta_2 (diem_kiem_tra):', model.coef_[0][1])
 print('Độ chính xác:', accuracy_score(y, pred))
@@ -32,4 +34,4 @@ for i, row in df.iterrows():
 
 # Ví dụ học sinh mới
 new_student = pd.DataFrame({'gio_hoc': [4], 'diem_kiem_tra': [7]})
-print('\nXác suất học sinh mới đậu:', model.predict_proba(new_student)[0, 1])
+print('\nXác suất học sinh mới đậu:', model.predict_proba(new_student.values)[0, 1])
